@@ -12,7 +12,7 @@ class Employee
     @active = active
   end
 
-  def get_first_name
+  def first_name
     return @first_name
   end
 
@@ -20,8 +20,13 @@ class Employee
     return "#{@first_name} #{@last_name} makes $#{@salary} a year."
   end
 
+  def give_annual_raise
+    @salary = @salary * 1.05
+  end
 end
 
 employee_1 = Employee.new("Robert", "Stewart", 90000, true)
 
+p employee_1.info
+p employee_1.give_annual_raise
 p employee_1.info
