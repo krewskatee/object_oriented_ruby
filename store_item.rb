@@ -42,7 +42,7 @@ item_3 = StoreItem.new(
                       color: "color",
                       price: 10
                       )
-                      
+
 food_item_1 = Food.new(
                       name: "Jello",
                       color: "Red",
@@ -55,3 +55,5 @@ p food_item_1.shelf_life
 p item_1.name
 item_1.name = "not_char"
 p item_1.name
+p food_item_1.shelf_life
+p food_item_1.name
