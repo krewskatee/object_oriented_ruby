@@ -50,5 +50,6 @@ manager_1 = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 1000
 
 p manager_1
 manager_1.give_all_raises
-p manager_1
+manager_1.fire_all_employees
 p employee_1.salary
+p employee_1.active

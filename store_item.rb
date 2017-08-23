@@ -14,6 +14,16 @@ class StoreItem
   end
 end
 
+class Food < StoreItem
+  attr_writer :shelf_life
+  attr_reader :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
 item_1 = StoreItem.new(
                       name: "Chair",
                       color: "green",
@@ -26,12 +36,21 @@ item_2 = StoreItem.new(
                       color: "black",
                       price: 550
                       )
-                      
+
 item_3 = StoreItem.new(
                       name: "Harry Potter",
                       color: "color",
                       price: 10
                       )
+                      
+food_item_1 = Food.new(
+                      name: "Jello",
+                      color: "Red",
+                      price: 5,
+                      shelf_life: 2
+                      )
+
+p food_item_1.shelf_life
 
 p item_1.name
 item_1.name = "not_char"
