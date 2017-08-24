@@ -54,10 +54,15 @@ while replay != false
   end
 
   p "Your had #{answers_right} answer(s) right and #{answers_wrong} answer(s) wrong."
-  p "Enter 'yes' or 'y' if you want to retry the card you got wrong:"
-  user_answer = gets.chomp.downcase
-  if user_answer == "yes" || user_answer == "y"
-    replay = true
+  if answers_wrong >= 1
+    p "Enter 'yes' or 'y' if you want to retry the card you got wrong, or press enter to quit"
+    user_answer = gets.chomp.downcase
+    if user_answer == "yes" || user_answer == "y"
+      replay = true
+    else
+      p "Thanks for playing!"
+      replay = false
+    end
   else
     p "Thanks for playing!"
     replay = false
