@@ -43,7 +43,7 @@ end
 
 class Bike < Vehicle
   include Driveable
-  
+
   attr_reader :gears, :type, :weight
   attr_writer :gears, :type, :weight
 
