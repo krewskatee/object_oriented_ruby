@@ -1,7 +1,4 @@
-require_relative "deckable"
-
 class Deck
-  include Deckable
 
   attr_reader :card_array
   attr_writer :card_array
@@ -12,4 +9,15 @@ class Deck
       @card_array << Card.new(question: question, answer: answer)
     end
   end
+
+  def remaining_cards
+    card_array.length
+  end
+
+  def draw_card
+    card = card_array[0]
+    card_array.delete_at(0)
+    card
+  end
+
 end
