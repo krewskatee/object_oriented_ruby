@@ -13,6 +13,17 @@ else
   puts "Sorry, You're wrong. Not your answer...you are just wrong."
 end
 
+hash = {question: "Who's your real mama?  Rosanne,  Peggy, or Carol", answer: "Rosanne"}
+puts hash[:question]
+user_input = gets.chomp.downcase
+correct_answer = /(?<=[#{hash[:answer]}][.] )\Rosanne(.+?)(?=\Rosanne)/.match(hash[:question]).to_s.downcase
+
+if user_input == correct_answer || user_input == hash[:answer].downcase
+  puts "Correct!!!"
+else
+  puts "Sorry, You're wrong. Not your answer...you are just wrong."
+end
+
 # the regex I used in this was from ruby docs http://ruby-doc.org/core-2.2.0/Regexp.html and http://www.rexegg.com/regex-quantifiers.html
 # Note: that if I change how my question string or my answer string is written my regex will break
 
